@@ -68,7 +68,7 @@ void setup() {
   ledcAttachPin(EnMR, canal_R);
 
   Serial.begin(115200);
-  SerialBT.begin("ColmiBoT-1"); //Bluetooth device name
+  SerialBT.begin("ColmiBot"); //Bluetooth device name
   
   pinMode(LED_L, OUTPUT);
   pinMode(LED_F, OUTPUT);
@@ -123,6 +123,10 @@ void loop() {
   US_left();
   US_front();
   US_right();
+
+  if (dist_F < 12){
+    Stop();
+  }
   vel = analogRead(pot);
   
   Serial.println(dato);
