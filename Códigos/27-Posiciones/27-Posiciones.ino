@@ -261,7 +261,7 @@ void odometria(){
   thetha = phi/PI *180;
 }
 
-void control(float xp, float yp){
+void posControl(float xp, float yp){
   speeds();
   //V = (VL + VR)/2;
   V = 3000;
